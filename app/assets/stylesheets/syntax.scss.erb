@@ -1,5 +1,8 @@
 <%= Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %>
 
-pre.highlight {
-  padding: 15px;
+div.highlight {
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: auto;
 }

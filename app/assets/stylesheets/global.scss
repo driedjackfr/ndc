@@ -15,13 +15,23 @@ h3 {
   input, textarea {
     width: 100%;
   }
+  div {
+    margin: 5px 0;
+  }
   p {
+    line-height: 1.5;
     code {
       background: #efdeef;
       padding: 1px 4px;
       border: 1px #aa45aa solid;
       border-radius: 4px;
       color: #aa45aa;
+    }
+  }
+  .post-body {
+    img {
+      display: block;
+      margin: auto;
     }
   }
 }

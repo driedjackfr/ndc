@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Admin::PostsController < Admin::ApplicationController
+  before_action :set_post, only: %i(edit update)
+
   def new
     @post = Post.new
   end
@@ -14,9 +16,24 @@ class Admin::PostsController < Admin::ApplicationController
     end
   end
 
+  def edit;  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to post_path(@post), notice: 'Updated the post!'
+    else
+      flash.new[:alert] = 'Update post fail!'
+      render :edit
+    end
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :excerpt, :body)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
