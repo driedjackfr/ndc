@@ -3,3 +3,25 @@
   padding: 0;
   font-size: 16px;
 }
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  input, textarea {
+    width: 100%;
+  }
+  p {
+    code {
+      background: #efdeef;
+      padding: 1px 4px;
+      border: 1px #aa45aa solid;
+      border-radius: 4px;
+      color: #aa45aa;
+    }
+  }
+}

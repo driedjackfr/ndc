@@ -1,1 +1,5 @@
-= markdown(@pa)
+h3 = @post.title
+.excerpt
+  em = @post.excerpt
+.post-body
+  = markdown(@post.body)

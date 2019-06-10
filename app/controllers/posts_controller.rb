@@ -1,18 +1,9 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  def show
-    @pa = <<~EOF
-          ```ruby
-          def haha
-            a.ha
-          end
-          # frozen_string_literal: true
+  def index; end
 
-          class ApplicationController < ActionController::Base
-            include MarkdownHelper
-          end
-          ```
-          EOF
+  def show
+    @post = Post.find(params[:id])
   end
 end

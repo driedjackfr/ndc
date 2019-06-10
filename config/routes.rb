@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
-  resources :posts
+  resources :posts, only: %i(index show)
+
+  namespace :admin do
+    resources :posts, only: %i(new create edit update destroy)
+  end
 end
