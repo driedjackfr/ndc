@@ -6,7 +6,9 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    link href='https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700|Inconsolata&display=swap&subset=vietnamese' rel='stylesheet'
   body
+    = render 'shared/header'
     = render 'shared/flash_message'
     .container
       = yield

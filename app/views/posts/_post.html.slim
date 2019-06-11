@@ -1,0 +1,5 @@
+.post
+  h3
+    = link_to post.title, post_path(post), class: 'link'
+  p = post.excerpt
+  p.timestamp = post.created_at.strftime('%d/%m/%Y')

@@ -1,17 +1,50 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+}
+body {
+  margin-bottom: 20px;
+}
+h1, h2, h3, p, label, input {
+  font-family: 'EB Garamond', serif;
+}
+p, label, input {
+  font-size: 18px;
+}
+code {
+  font-family: 'Inconsolata', monospace;
+}
+h1 {
+  a {
+    font-size: 38px;
+    color: #000;
+  }
 }
 h2 {
   font-size: 30px;
 }
 h3 {
-  font-size: 24px;
+  font-size: 22px;
+}
+a {
+  text-decoration: none;
+}
+.link {
+  color: #aa45aa;
+  border-bottom: 1px solid #aa45aa;
+  padding-bottom: 3px;
+  &:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  &:visited {
+    color: #aa45aa;
+    border-bottom: 1px solid #aa45aa;
+  }
 }
 .container {
   max-width: 800px;
-  margin: auto;
+  margin: 20px auto;
   input, textarea {
     width: 100%;
   }
