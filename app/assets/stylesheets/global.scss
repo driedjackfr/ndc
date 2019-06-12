@@ -5,7 +5,7 @@
 body {
   margin-bottom: 20px;
 }
-h1, h2, h3, p, label, input {
+h1, h2, h3, p, label, input, ul, ol {
   font-family: 'EB Garamond', serif;
 }
 p, label, input {
@@ -58,8 +58,26 @@ a {
       display: block;
       margin: auto;
     }
-    h1, h2, h3, h4, p {
+    h1, h2, h3, h4, p, ul, ol {
       margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 15px;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+    a {
+      color: #aa45aa;
+      border-bottom: 1px solid #aa45aa;
+      padding-bottom: 3px;
+      &:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
+      &:visited {
+        color: #aa45aa;
+        border-bottom: 1px solid #aa45aa;
+      }
     }
   }
 }
