@@ -1,13 +1,28 @@
 .post {
   margin-bottom: 20px !important;
-  .timestamp {
-    font-size: 16px;
-    color: #777;
-  }
-  h3 {
+  h2 {
     .link {
       display: inline-block;
       width: 100%;
     }
+  }
+}
+
+.excerpt {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #efdeef;
+}
+
+.timestamp {
+  font-size: 16px;
+  color: #777;
+  display: inline-block;
+}
+
+.action {
+  display: inline-block;
+  .action-item {
+    margin-left: 10px;
   }
 }

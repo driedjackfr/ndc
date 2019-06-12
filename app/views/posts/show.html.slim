@@ -1,5 +1,8 @@
-h3 = @post.title
+h1 = @post.title
 .excerpt
-  em = @post.excerpt
+  p
+    em = @post.excerpt
+  p.timestamp = @post.created_at.strftime('%d/%m/%Y')
+  = render partial: 'action', locals: { post: @post } if logged_in?
 .post-body
   = markdown(@post.body)

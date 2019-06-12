@@ -13,18 +13,13 @@ p, label, input {
 }
 code {
   font-family: 'Inconsolata', monospace;
+  font-size: 16px;
 }
 h1 {
   a {
     font-size: 38px;
     color: #000;
   }
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 22px;
 }
 a {
   text-decoration: none;
@@ -48,16 +43,13 @@ a {
   input, textarea {
     width: 100%;
   }
-  div {
-    margin: 5px 0;
-  }
   p {
     line-height: 1.5;
     code {
       background: #efdeef;
       padding: 1px 4px;
       border: 1px #aa45aa solid;
-      border-radius: 4px;
+      border-radius: 3px;
       color: #aa45aa;
     }
   }
@@ -65,6 +57,9 @@ a {
     img {
       display: block;
       margin: auto;
+    }
+    h1, h2, h3, h4, p {
+      margin-bottom: 10px;
     }
   }
 }

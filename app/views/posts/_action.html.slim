@@ -1,0 +1,5 @@
+.action
+  = link_to 'Edit', edit_admin_post_path(post), class: 'link action-item'
+  = link_to 'Delete', admin_post_path(post), method: :delete,
+                      data: { confirm: 'Are you sure to delete this post?' },
+                      class: 'link action-item'
