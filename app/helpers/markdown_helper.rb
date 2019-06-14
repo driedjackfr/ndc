@@ -24,7 +24,11 @@ module MarkdownHelper
      fenced_code_blocks: true,
      strikethrough: true,
      superscript: true,
-     lax_spacing: true
+     lax_spacing: true,
+     quote: true,
+     footnotes: true,
+     tables: true,
+     highlight: true
    }
 
    markdown = Redcarpet::Markdown.new(renderer, extras)
