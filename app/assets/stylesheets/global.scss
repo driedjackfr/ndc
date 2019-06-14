@@ -27,7 +27,7 @@ a {
 .link {
   color: #aa45aa;
   border-bottom: 1px solid #aa45aa;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
   &:hover {
     color: #000;
     border-bottom: 1px solid #000;
@@ -49,7 +49,6 @@ a {
     code {
       background: #efdeef;
       padding: 1px 4px;
-      border: 1px #aa45aa solid;
       border-radius: 3px;
       color: #aa45aa;
     }
@@ -70,7 +69,7 @@ a {
     a {
       color: #aa45aa;
       border-bottom: 1px solid #aa45aa;
-      padding-bottom: 3px;
+      padding-bottom: 1px;
       &:hover {
         color: #000;
         border-bottom: 1px solid #000;
