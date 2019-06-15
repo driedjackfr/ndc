@@ -1,8 +1,6 @@
 header
-  .h-wrap
-    = link_to root_path do
-      = image_tag 'blog-logo', id: 'logo'
-    .nav
-      - if logged_in?
-        = link_to 'New posts', new_admin_post_path, class: 'link nav-link'
-        = link_to 'Sign out', destroy_admin_session_path, class: 'link nav-link', method: :delete
+  h1 = link_to 'ndc blog', root_path
+  .nav
+    - if logged_in?
+      = link_to 'New posts', new_admin_post_path, class: 'link nav-link'
+      = link_to 'Sign out', destroy_admin_session_path, class: 'link nav-link', method: :delete
