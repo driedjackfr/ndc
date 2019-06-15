@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::PostsController < Admin::ApplicationController
-  before_action :set_post, only: %i(edit update)
+  before_action :set_post, only: %i(edit update destroy)
 
   def new
     @post = Post.new
@@ -25,6 +25,11 @@ class Admin::PostsController < Admin::ApplicationController
       flash.new[:alert] = 'Update post fail!'
       render :edit
     end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to root_path, notice: 'Deleted!'
   end
 
   private

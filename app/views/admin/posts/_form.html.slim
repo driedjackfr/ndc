@@ -1,5 +1,8 @@
 = simple_form_for [:admin, @post] do |f|
-  = f.input :title
-  = f.input :excerpt
-  = f.input :body, input_html: { rows: 30 }
+  .f-control
+    = f.input :title, input_html: { class: 'f-input' }
+  .f-control
+    = f.input :excerpt, input_html: { class: 'f-input' }
+  .f-control
+    = f.input :body, input_html: { rows: 30 }
   = f.button :submit
