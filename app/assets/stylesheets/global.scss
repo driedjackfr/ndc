@@ -41,8 +41,28 @@ a {
   max-width: 800px;
   margin: 20px auto;
   padding: 0 10px;
-  input, textarea {
+  .f-control {
+    margin-bottom: 10px;
+  }
+  .btn {
+    background: #ffdcbe;
+    border: none;
+    padding: 10px 15px;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+      background: #d7bbde 75%;
+    }
+  }
+  .f-input, textarea {
     width: 100%;
+    font-family: 'EB Garamond';
+  }
+  input {
+    padding: 3px 10px;
+  }
+  textarea {
+    padding: 10px;
   }
   p {
     line-height: 1.5;
