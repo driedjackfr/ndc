@@ -17,5 +17,7 @@ module Ndc
     # the framework and any gems in your application.
 
     config.time_zone = 'Hanoi'
+    config.i18n.default_locale = :vi
+    config.i18n.available_locales = %i(vi en)
   end
 end

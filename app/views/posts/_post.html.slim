@@ -1,5 +1,4 @@
 .post
   h2 = link_to post.title, post_path(post), class: 'link'
   p = post.excerpt
-  p.timestamp = post.created_at.strftime('%d/%m/%Y')
-  = render partial: 'action', locals: { post: post } if logged_in?
+  = render partial: 'post_info', locals: { post: post }
