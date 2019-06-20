@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts, only: %i(new create edit update destroy)
   end
+
+  get :vuejs, to: 'funs#vuejs'
 end
