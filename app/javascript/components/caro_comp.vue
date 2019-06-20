@@ -1,8 +1,8 @@
 <template>
   <div id="caro-comp">
     <h1>Chơi caro nào!</h1>
-    <button>Chơi với bạn</button>
-    <button>{{ message }}</button>
+    <button class="btn">Chơi với máy</button>
+    <button class="btn">Chơi với bạn</button>
   </div>
 </template>
 
@@ -16,8 +16,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #caro-comp {
   text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 </style>
