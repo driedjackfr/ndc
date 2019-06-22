@@ -29,15 +29,11 @@ a {
   border-bottom: 1px solid #aa45aa;
   padding-bottom: 1px;
   &:hover {
-    color: #000;
+    color: #e096b0;
     border-bottom: 1px solid #000;
   }
-  &:visited {
-    color: #aa45aa;
-    border-bottom: 1px solid #aa45aa;
-  }
 }
-.container {
+#container {
   max-width: 700px;
   margin: 20px auto;
   padding: 0 10px;

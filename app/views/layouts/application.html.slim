@@ -9,8 +9,10 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     link href='https://fonts.googleapis.com/css?family=Barlow:400,700|Share+Tech+Mono&display=swap&subset=vietnamese' rel='stylesheet'
     = evil_icons_sprite
+    = content_for :stylesheet_pack
   body
     = render 'shared/header'
     = render 'shared/flash_message'
-    .container
+    #container
       = yield
+    = content_for :javascript_pack
