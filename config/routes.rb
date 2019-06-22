@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   get :vuejs, to: 'funs#vuejs'
+  get :dashboard, to: 'funs#dashboard'
 
   devise_for :admins
   devise_for :guests
