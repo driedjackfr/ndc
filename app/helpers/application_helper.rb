@@ -14,4 +14,9 @@ module ApplicationHelper
       stylesheet_pack_tag pack
     end
   end
+
+  def full_pack(pack)
+    javascript_pack pack
+    stylesheet_pack pack
+  end
 end

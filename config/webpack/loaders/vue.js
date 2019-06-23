@@ -1,5 +1,5 @@
 module.exports = {
-  test: /\.vue(\.erb)?$/,
+  test: /\.vue(\.slim)?$/,
   use: [{
     loader: 'vue-loader'
   }]
