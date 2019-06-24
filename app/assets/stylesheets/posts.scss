@@ -43,24 +43,25 @@ blockquote {
   }
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: 'Barlow', sans-serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-  th {
-    text-align: left;
-  }
-  th, td {
-    border-bottom: 1px solid #eee;
-  }
-  tr {
-    &:hover {
-      background-color: #eee;
+.post-body {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-bottom: 10px;
+    th {
+      text-align: left;
     }
-    &:nth-child(even) {
-      background-color: #f5f5f5;
+    th, td {
+      border-bottom: 1px solid #eee;
+    }
+    tr {
+      &:hover {
+        background-color: #eee;
+      }
+      &:nth-child(even) {
+        background-color: #f5f5f5;
+      }
     }
   }
 }

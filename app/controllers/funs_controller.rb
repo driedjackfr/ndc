@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class FunsController < ApplicationController
-  def vuejs; end
-
   def dashboard
     titles, views = Post.pluck(:title, :views_count).transpose
     titles.each { |title| title.slice!(10..-1) }
@@ -16,4 +14,8 @@ class FunsController < ApplicationController
       }]
     }
   end
+
+  def vuejs; end
+
+  def caro; end
 end
