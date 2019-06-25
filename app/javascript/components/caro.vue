@@ -7,13 +7,14 @@
       </tr>
     </table>
     <caro-announce v-show="isAnnounce" @play="play">
-      <p v-show="replay">Hết game rồi, chơi lại không?</p>
+      <h4 v-show="replay">{{ winner }} thắng rồi, chơi lại không?</h4>
     </caro-announce>
   </div>
 </template>
 
 <script>
 import CaroAnnounce from '../components/caro_announce'
+import CaroUtil from '../utils/caro'
 
 export default {
   components: { CaroAnnounce },
@@ -23,11 +24,10 @@ export default {
       isBlur: true,
       replay: false,
       p1Turns: [],
-      p1LastTurn: [],
       p2Turns: [],
-      p2LastTurn: [],
       isP1: true,
-      randKey: 0
+      randKey: 0,
+      winner: ""
     }
   },
   computed: {
@@ -37,35 +37,11 @@ export default {
     color: function() {
       return this.isP1 ? "blue" : "red"
     },
-    endGame: function() {
+    hasWin: function() {
       if (this.isP1) {
-        if (this.p1Turns.length > 3) {
-          let xs = this.p1Turns.map(x => x[0])
-          let ys = this.p1Turns.map(x => x[1])
-          let res = [{coord: [], ind: []}]
-          let first = xs[0]
-          console.log(xs)
-          xs.forEach((x, i) => {
-          	if (x === first) {
-          		res[0].coord.push(x)
-          		res[0].ind.push(i)
-            } else if (x === first + 1) {
-          		res[0].coord.push(x)
-          		res[0].ind.push(i)
-          		first = x
-            } else {
-          		res.unshift({coord: [x], ind: [i]})
-          		first = x
-            }
-          })
-          console.log('loc ra')
-          console.log(res)
-          return res.some(a => {
-            return a.coord[a.coord.length - 1] - a.coord[0] >= 3
-          })
-        }
+        return CaroUtil.check(this.p1Turns)
       } else {
-        return false
+        return CaroUtil.check(this.p2Turns)
       }
     }
   },
@@ -86,58 +62,57 @@ export default {
       square.innerHTML = this.label
       square.classList.add(this.color)
       if (this.isP1) {
-        this.p1Turns.push(this.getCoordinate(square))
+        this.p1Turns.push(CaroUtil.getCoordinate(square))
         this.p1Turns.sort((a, b) => {
           return a[0] - b[0] || a[1] - b[1]
         })
-        console.log(this.p1Turns)
       } else {
-        this.p2Turns.push(this.getCoordinate(square))
-        console.log(this.p2Turns)
+        this.p2Turns.push(CaroUtil.getCoordinate(square))
+        this.p2Turns.sort((a, b) => {
+          return a[0] - b[0] || a[1] - b[1]
+        })
       }
 
-      if (this.endGame) {
+      if (this.hasWin) {
+        this.winner = this.isP1 ? "Xanh" : "Đỏ"
         this.isAnnounce = true
         this.isBlur = true
         this.replay = true
         this.p1Turns = []
         this.p2Turns = []
         this.isP1 = true
+      } else {
+        this.isP1 = !this.isP1
       }
-
-      this.isP1 = !this.isP1
-    },
-    getCoordinate: function(elm) {
-      return elm.dataset.coordinate.split("-").map(n => parseInt(n))
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-#caro {
-  position: relative;
-  table, th, td {
-    width: 676px;
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  table {
-    margin: auto;
-    td {
-      height: 44px;
-      width: 44px;
-      font-size: 30px;
+  #caro {
+    position: relative;
+    table, th, td {
+      width: 676px;
+      border: 1px solid black;
+      border-collapse: collapse;
     }
-    .blue {
-      color: blue;
+    table {
+      margin: auto;
+      td {
+        height: 44px;
+        width: 44px;
+        font-size: 30px;
+      }
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
     }
-    .red {
-      color: red;
+    .blur {
+      filter: blur(2px);
     }
   }
-  .blur {
-    filter: blur(2px);
-  }
-}
 </style>

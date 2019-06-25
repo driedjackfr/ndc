@@ -1,9 +1,11 @@
 <template>
     <div class="announce">
-    <slot></slot>
-    <button class="btn" @click="$emit('play')">
-      Chơi thôi
-    </button>
+      <div class="modal">
+        <slot></slot>
+        <button class="btn" @click="$emit('play')">
+          Chơi thôi
+        </button>
+      </div>
   </div>
 </template>
 
@@ -20,8 +22,15 @@ export default {
   width: 100%;
   height: 100%;
   text-align: center;
-  button {
+  .modal {
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    margin: 270px auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    h4 {
+      margin-bottom: 10px;
+    }
   }
 }
 </style>
