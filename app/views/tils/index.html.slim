@@ -1,0 +1,5 @@
+h1 TodayILearn
+.content
+  - @posts.each do |post|
+    .post
+      h2 = link_to post.title, til_path(post), class: 'link'

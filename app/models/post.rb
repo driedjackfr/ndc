@@ -2,7 +2,11 @@
 
 class Post < ApplicationRecord
   include Timeable
-  
+
+  CATEGORY = { common: 0, til: 1 }.freeze
+
+  enum category: CATEGORY
+
   belongs_to :author, class_name: 'Admin', foreign_key: 'user_id'
 
   validates :title, presence: true
