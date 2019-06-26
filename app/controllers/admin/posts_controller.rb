@@ -9,7 +9,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def create
     if @post = current_admin.posts.create(post_params)
-      redirect_to post_path(@post), notice: 'Created a new post!'
+      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: 'Created a new post!'
     else
       flash.new[:alert] = 'Create post fail!'
       render :new
@@ -20,7 +20,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: 'Updated the post!'
+      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: 'Updated the post!'
     else
       flash.new[:alert] = 'Update post fail!'
       render :edit
@@ -39,6 +39,6 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 end

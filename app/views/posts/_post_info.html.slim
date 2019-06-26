@@ -3,4 +3,4 @@
   p.info-text = post.display_created_at
   = evil_icon 'ei-eye'
   p.info-text = "#{number_with_delimiter post.views_count, delimiter: '.'} lượt xem"
-  = render partial: 'action', locals: { post: post } if logged_in?
+  = render partial: 'shared/action', locals: { post: post } if logged_in?

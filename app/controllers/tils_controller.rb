@@ -2,11 +2,11 @@
 
 class TilsController < ApplicationController
   def index
-    @posts = Post.til.select(:id, :title, :created_at).order(created_at: :desc)
+    @posts = Post.til.select(:id, :title, :created_at, :slug).order(created_at: :desc)
   end
 
   def show
-    @post = Post.til.find(params[:id])
+    @post = Post.friendly.til.find(params[:id])
   end
 
   def today
