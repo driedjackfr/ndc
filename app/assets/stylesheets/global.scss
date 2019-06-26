@@ -12,8 +12,8 @@ p, label, input, textarea {
   font-size: 16px;
 }
 code {
-  font-family: 'Overpass Mono', monospace;
-  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
 }
 h1 {
   a {
@@ -25,11 +25,11 @@ a {
   text-decoration: none;
 }
 .link {
-  color: #aa45aa;
-  border-bottom: 1px solid #aa45aa;
+  color: #ff4d8c;
+  border-bottom: 1px solid #ff4d8c;
   padding-bottom: 1px;
   &:hover {
-    color: #e096b0;
+    color: #000;
     border-bottom: 1px solid #000;
   }
 }
@@ -63,10 +63,10 @@ a {
   p {
     line-height: 1.5;
     code {
-      background: #efe8ed;
+      background: #f3f3f3;
       padding: 1px 4px;
       border-radius: 3px;
-      color: #aa45aa;
+      color: #ff4d8c;
     }
   }
   .post-body {
@@ -86,16 +86,16 @@ a {
       font-size: 16px;
     }
     a {
-      color: #aa45aa;
-      border-bottom: 1px solid #aa45aa;
+      color: #ff4d8c;
+      border-bottom: 1px solid #ff4d8c;
       padding-bottom: 1px;
       &:hover {
         color: #000;
         border-bottom: 1px solid #000;
       }
       &:visited {
-        color: #aa45aa;
-        border-bottom: 1px solid #aa45aa;
+        color: #ff4d8c;
+        border-bottom: 1px solid #ff4d8c;
       }
     }
   }
