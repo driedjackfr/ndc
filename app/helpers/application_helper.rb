@@ -19,4 +19,10 @@ module ApplicationHelper
     javascript_pack pack
     stylesheet_pack pack
   end
+
+  def subtitle(title)
+    content_for :subtitle do
+      " | #{title}"
+    end
+  end
 end
