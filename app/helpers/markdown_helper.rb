@@ -14,7 +14,8 @@ module MarkdownHelper
      # filer_html: true,
      hard_wrap: true,
      link_attributes: { rel: 'nofollow' },
-     prettify: true
+     prettify: true,
+     with_toc_data: true
    }
    renderer = HTML.new(render_options)
    extras = {
