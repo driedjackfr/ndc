@@ -2,7 +2,7 @@
 
 class FunsController < ApplicationController
   def dashboard
-    titles, views = Post.pluck(:title, :views_count).transpose
+    titles, views = Post.common.pluck(:title, :views_count).transpose
     titles.each { |title| title.slice!(10..-1) }
     @chartdata = {
       labels: titles,

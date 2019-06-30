@@ -1,59 +1,38 @@
-export default {
-  check: function (turns) {
-    if (turns.length < 4) return
-    let sameX, sameY
-    let dupsX = []
+export default function (turns, oppositeTurns) {
+  if (turns.length < 5) return
+  return isSameX(turns, oppositeTurns) || isSameY(turns, oppositeTurns) ||
+         isCrossFromLeft(turns, oppositeTurns) || isCrossFromRight(turns, oppositeTurns)
+}
 
-    turns.forEach(c => {
-      if (c[0] === sameX) {
-        dupsX[0].push(c)
-      } else {
-        dupsX.unshift([c])
-        sameX = c[0]
-      }
-    })
-    let foursX = dupsX.filter(c => c.length >= 4)
-    let column = foursX.some(cs => {
-      let compareY = -1
-      let conse = []
-      cs.forEach(c => {
-        if (c[1] === compareY + 1) {
-          conse[0].push(c[1])
-        } else {
-          conse.unshift([c[1]])
-        }
-        compareY = c[1]
-      })
-      console.log(conse)
-      return conse.some(y => y.length >= 4)
-    })
+function isSameX(turns, oppositeTurns) {
 
-    let dupsY = turns.reduce((acc, c) => {
-      let key = c[1]
-      if (!acc[key]) {
-        acc[key] = []
-      }
-      acc[key].push(c)
-      return acc
-    }, {})
-    let foursY = Object.values(dupsY).filter(c => c.length >= 4)
-    let row = foursY.some(cs => {
-      let compareX = -1
-      let conse = []
-      cs.forEach(c => {
-        if (c[0] === compareX + 1) {
-          conse[0].push(c[0])
-        } else {
-          conse.unshift([c[0]])
-        }
-        compareX = c[0]
-      })
-      console.log(conse)
-      return conse.some(x => x.length >= 4)
-    })
-    return column || row
-  },
-  getCoordinate: function(elm) {
-    return elm.dataset.coordinate.split("-").map(n => parseInt(n))
-  }
+  return false
+}
+
+function isSameY(turns, oppositeTurns) {
+  return checkCrossY(turns, oppositeTurns, 15)
+}
+
+function isCrossFromLeft(turns, oppositeTurns) {
+  return checkCrossY(turns, oppositeTurns, 16)
+}
+
+function isCrossFromRight(turns, oppositeTurns) {
+  return checkCrossY(turns, oppositeTurns, 14)
+}
+
+function checkCrossY(turns, oppositeTurns, distant) {
+  let hold = []
+  turns.forEach(turn => {
+    let match = hold.find(e => e[0] + distant === turn)
+    if (match) {
+      match.unshift(turn)
+    } else {
+      hold.push([turn])
+    }
+  })
+  let result = hold.filter(e => e.length === 5)
+  return result.some(g => {
+    return !(oppositeTurns.includes(g[0] + distant) && oppositeTurns.includes(g[g.length - 1] - distant))
+  })
 }

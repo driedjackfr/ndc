@@ -2,7 +2,7 @@
   <div id="caro">
     <table :class="{ blur: isBlur }" :key="randKey">
       <tr v-for="y in 15" :key="y">
-        <td v-for="x in 15" :key="x" @click="mark" :data-coordinate="x + '-' + y" class="center">
+        <td v-for="x in 15" :key="x" @click="mark" :data-index="(y - 1) * 15 + x" class="center">
         </td>
       </tr>
     </table>
@@ -14,7 +14,7 @@
 
 <script>
 import CaroAnnounce from '../components/caro_announce'
-import CaroUtil from '../utils/caro'
+import CaroCheckWin from '../utils/caro'
 
 export default {
   components: { CaroAnnounce },
@@ -37,12 +37,14 @@ export default {
     color: function() {
       return this.isP1 ? "blue" : "red"
     },
+    currentTurns: function() {
+      return this.isP1 ? this.p1Turns : this.p2Turns
+    },
+    currentOppositeTurns: function() {
+      return this.isP1 ? this.p2Turns : this.p1Turns
+    },
     hasWin: function() {
-      if (this.isP1) {
-        return CaroUtil.check(this.p1Turns)
-      } else {
-        return CaroUtil.check(this.p2Turns)
-      }
+      return CaroCheckWin(this.currentTurns, this.currentOppositeTurns)
     }
   },
   methods: {
@@ -61,18 +63,8 @@ export default {
       if (square.innerHTML.length !== 0) return
       square.innerHTML = this.label
       square.classList.add(this.color)
-      if (this.isP1) {
-        this.p1Turns.push(CaroUtil.getCoordinate(square))
-        this.p1Turns.sort((a, b) => {
-          return a[0] - b[0] || a[1] - b[1]
-        })
-      } else {
-        this.p2Turns.push(CaroUtil.getCoordinate(square))
-        this.p2Turns.sort((a, b) => {
-          return a[0] - b[0] || a[1] - b[1]
-        })
-      }
-
+      this.currentTurns.push(parseInt(square.dataset.index))
+      this.currentTurns.sort((a, b) => a - b)
       if (this.hasWin) {
         this.winner = this.isP1 ? "Xanh" : "Đỏ"
         this.isAnnounce = true
