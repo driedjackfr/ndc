@@ -1,7 +1,11 @@
+= full_pack 'contents'
+= subtitle @post.title
+
 h1 = @post.title
 .excerpt
   p
     em = @post.excerpt
   = render partial: 'post_info', locals: { post: @post }
+contents
 .post-body
   = markdown(@post.body)

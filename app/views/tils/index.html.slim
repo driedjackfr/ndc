@@ -1,0 +1,8 @@
+= subtitle 'Tổng hợp các bài TodayILearn'
+
+h1 TodayILearn
+.content
+  - @posts.each do |post|
+    .post
+      h2 = link_to post.title, til_path(post), class: 'link'
+      = render partial: 'shared/action', locals: { post: post } if logged_in?

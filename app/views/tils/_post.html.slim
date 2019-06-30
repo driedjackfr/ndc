@@ -1,0 +1,8 @@
+.til
+  p.center
+    | Các bài học cũ được lưu ở
+    =< link_to 'đây', tils_path, class: 'link'
+  = render partial: 'shared/action', locals: { post: post } if logged_in?
+  h1.center = post.title
+  .post-body
+    = markdown(post.body)
