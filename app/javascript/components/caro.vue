@@ -94,13 +94,13 @@ export default {
       td {
         height: 44px;
         width: 44px;
-        font-size: 30px;
+        font-size: 35px;
       }
       .blue {
-        color: blue;
+        color: #11e23f;
       }
       .red {
-        color: red;
+        color: #ff4d8c;
       }
     }
     .blur {
