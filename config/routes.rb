@@ -15,5 +15,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts, only: %i(new create edit update destroy)
+    resources :tlg_messages, only: %i(new create)
+  end
+
+  namespace :tlg do
+    post :hook, to: 'bots#hook'
   end
 end
