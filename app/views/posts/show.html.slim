@@ -7,5 +7,5 @@ h1 = @post.title
     em = @post.excerpt
   = render partial: 'post_info', locals: { post: @post }
 contents
-.post-body
+.post-body data-turbolinks="false"
   = markdown(@post.body)

@@ -85,14 +85,17 @@ a {
       margin: auto;
       max-width: 100%;
     }
-    h1, h2, h3, h4, p, ul, ol {
-      margin-bottom: 15px;
+    h1, p, ul, ol {
+      margin-bottom: 20px;
     }
     h2 {
       margin-top: 25px;
     }
+    h2, h3, h4 {
+      margin-bottom: 10px;
+    }
     ul, ol {
-      margin-left: 15px;
+      margin-left: 20px;
       line-height: 1.7;
       font-size: 18px;
     }
