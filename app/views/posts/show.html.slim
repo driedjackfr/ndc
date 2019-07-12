@@ -2,8 +2,8 @@
 = subtitle @post.title
 
 h1 = @post.title
-.excerpt
-  p
+.description
+  p#excerpt
     em = @post.excerpt
   = render partial: 'post_info', locals: { post: @post }
 contents

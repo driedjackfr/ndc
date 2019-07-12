@@ -8,11 +8,14 @@ body {
 h1, h2, h3, h4, p, label, input, ul, ol, a, table {
   font-family: 'Literata', serif;
 }
+h1, h2, h3, h4 {
+  line-height: 1.4;
+}
 h1 {
-  font-size: 44px;
+  font-size: 40px;
 }
 h2 {
-  font-size: 34px;
+  font-size: 32px;
 }
 h3 {
   font-size: 26px;
