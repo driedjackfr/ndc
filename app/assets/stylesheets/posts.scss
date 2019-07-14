@@ -1,5 +1,5 @@
 .post {
-  margin-bottom: 20px !important;
+  margin-bottom: 35px !important;
   h2 {
     .link {
       display: inline-block;
@@ -8,10 +8,15 @@
   }
 }
 
-.excerpt {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
+.description {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #efdeef;
+}
+
+#excerpt {
+  margin: 15px 0;
+  color: #777;
 }
 
 .info {
@@ -20,6 +25,7 @@
   margin-top: 5px;
   .info-text {
     margin-right: 10px;
+    margin-top: -2px;
     font-size: 16px;
   }
 }
@@ -47,7 +53,7 @@ blockquote {
   table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Literata', serif;
     font-size: 16px;
     margin: 15px 0;
     th {
@@ -65,6 +71,12 @@ blockquote {
         background-color: #eee;
       }
     }
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(251, 73, 52, 0.75), rgba(0, 0, 0, 0));
+    margin: 50px 0;
   }
 }
 

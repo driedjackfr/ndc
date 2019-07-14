@@ -1,4 +1,4 @@
 .post
   h2 = link_to post.title, post_path(post), class: 'link'
-  p = post.excerpt
+  p#excerpt = post.excerpt
   = render partial: 'post_info', locals: { post: post }
