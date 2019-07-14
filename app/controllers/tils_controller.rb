@@ -10,6 +10,13 @@ class TilsController < ApplicationController
   end
 
   def today
-    @post = Post.til.last
+    if params[:prev].present?
+      @prev = params[:prev].to_i + 1
+      @post = Post.til.order(created_at: :desc).offset(params[:prev].to_i).first
+      @is_eldest = Post.til.count == @prev
+    else
+      @post = Post.til.last
+      @prev = 1
+    end
   end
 end

@@ -1,0 +1,5 @@
+.til_navigate
+  - unless @is_eldest
+    = link_to '< hôm trước', today_path(prev: @prev), class: 'nav_day'
+  - if params[:prev].to_i > 0
+    = link_to 'hôm sau >'  , today_path(prev: @prev - 2), class: 'nav_day'
