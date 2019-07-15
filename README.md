@@ -33,6 +33,14 @@ Có một dashboard hiển thị trực quan bài viết với lượt xem
 
 Có một bàn cờ caro cho hai người chơi trên cùng một máy
 
+## Chụp màn hình
+
+[![Image from Gyazo](https://i.gyazo.com/5121df859b95f54aabece316f3f0a895.png)](https://gyazo.com/5121df859b95f54aabece316f3f0a895)
+
+[![Image from Gyazo](https://i.gyazo.com/5f12282f52329e255a32d229d0d35b3d.png)](https://gyazo.com/5f12282f52329e255a32d229d0d35b3d)
+
+[![Image from Gyazo](https://i.gyazo.com/5bae8e8fa804c8837d73688a6e04fdd5.png)](https://gyazo.com/5bae8e8fa804c8837d73688a6e04fdd5)
+
 ---
 
 ## TODO:
