@@ -45,7 +45,7 @@ Có một bàn cờ caro cho hai người chơi trên cùng một máy
 
 ## TODO:
 
-- [ ] Phân trang bài đăng trên trang chính
+- [x] Phân trang bài đăng trên trang chính
 - [ ] Gợi ý bài đọc tiếp theo hoặc liên quan trên từng bài đăng
 - [ ] Cho phép bình luận bài đăng
 - [ ] Cho phép đánh giá bài đăng bằng icon hoặc tương tác,...
