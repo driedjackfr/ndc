@@ -98,7 +98,7 @@ a {
       margin-bottom: 10px;
     }
     ul, ol {
-      margin-left: 20px;
+      list-style-position: inside;
       line-height: 1.7;
       font-size: 18px;
     }
@@ -129,4 +129,27 @@ a {
 .ps {
   font-style: italic;
   color: #777;
+}
+
+::marker {
+  color: #c8c8c8;
+  font-family: sans-serif;
+  font-weight: bold
+}
+
+.pagination {
+  text-align: center;
+  font-size: 18px;
+  * {
+    font-family: 'Inconsolata', monospace;
+  }
+  a {
+    color: #fb4934;
+    &:hover {
+      color: #000;
+    }
+    &:visited {
+      color: #fb4934;
+    }
+  }
 }
