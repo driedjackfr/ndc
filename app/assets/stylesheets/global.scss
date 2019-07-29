@@ -5,11 +5,12 @@
 body {
   margin-bottom: 50px;
 }
-h1, h2, h3, h4, p, label, input, ul, ol, a, table {
-  font-family: 'Literata', serif;
+p, label, input, ul, ol, a, table {
+  font-family: 'IBM Plex Serif', serif;
 }
 h1, h2, h3, h4 {
   line-height: 1.4;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 h1 {
   font-size: 40px;
@@ -24,12 +25,14 @@ p, label, input, textarea {
   font-size: 18px;
 }
 code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
 }
-h1 {
+h1, h2 {
   a {
     color: #000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    border: none !important;
   }
 }
 a {
@@ -63,7 +66,7 @@ a {
   }
   .f-input, textarea {
     width: 100%;
-    font-family: 'Literata', serif;
+    font-family: 'IBM Plex Serif', serif;
   }
   input {
     padding: 3px 10px;
@@ -92,10 +95,10 @@ a {
       margin-bottom: 20px;
     }
     h2 {
-      margin-top: 25px;
+      margin-top: 35px;
     }
     h2, h3, h4 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     ul, ol {
       list-style-position: inside;
@@ -141,7 +144,7 @@ a {
   text-align: center;
   font-size: 18px;
   * {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'IBM Plex Mono', monospace;
   }
   a {
     color: #fb4934;
