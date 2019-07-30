@@ -8,10 +8,11 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def create
-    if @post = current_admin.posts.create(post_params)
+    @post = current_admin.posts.build(post_params)
+    if @post.save
       redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: 'Created a new post!'
     else
-      flash.new[:alert] = 'Create post fail!'
+      flash.now[:alert] = 'Create post fail!'
       render :new
     end
   end
@@ -30,6 +31,10 @@ class Admin::PostsController < Admin::ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path, notice: 'Deleted!'
+  end
+
+  def preview
+    render json: { raw_html: markdown_util.render(params[:text]) }
   end
 
   private

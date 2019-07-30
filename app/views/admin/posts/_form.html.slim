@@ -1,3 +1,5 @@
+= full_pack 'post_preview'
+
 = simple_form_for [:admin, @post] do |f|
   .f-control
     = f.input :category, as: :select, collection: Post::CATEGORY.keys,
@@ -7,5 +9,10 @@
   .f-control
     = f.input :excerpt, input_html: { class: 'f-input' }
   .f-control
-    = f.input :body, input_html: { rows: 30 }
+    = f.label :body
+    .tab
+      = link_to 'Raw', '#', id: 'raw', class: 'tablinks', data: { turbolinks: false }
+      = link_to 'Xem trước', '#', id: 'preview', class: 'tablinks', data: { turbolinks: false }
+    = f.input_field :body, rows: 30
+    #post-preview.post-body
   = f.button :submit

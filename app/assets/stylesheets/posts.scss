@@ -53,7 +53,7 @@ blockquote {
   table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     margin: 15px 0;
     th {
@@ -83,5 +83,35 @@ blockquote {
 .til {
   h1 {
     margin-bottom: 20px;
+  }
+}
+
+#post-preview {
+  border: 1px solid #777;
+  padding: 10px;
+  width: 100%;
+  display: none;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+  .tablinks {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #ddd;
+    }
+    &:active {
+      background-color: #ccc;
+    }
   }
 }

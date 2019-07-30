@@ -10,6 +10,10 @@ module MarkdownHelper
  end
 
  def markdown(text)
+   raw markdown_util.render(text)
+ end
+
+ def markdown_util
    render_options = {
      # filer_html: true,
      hard_wrap: true,
@@ -32,7 +36,6 @@ module MarkdownHelper
      highlight: true
    }
 
-   markdown = Redcarpet::Markdown.new(renderer, extras)
-   raw markdown.render(text)
+   Redcarpet::Markdown.new(renderer, extras)
  end
 end

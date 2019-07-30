@@ -1,3 +1,8 @@
+$main-red: #fb4934;
+$error-red: #7b0000b0;
+$gray: #777;
+$bgcode-red: #fff2f0;
+
 * {
   margin: 0;
   padding: 0;
@@ -39,8 +44,8 @@ a {
   text-decoration: none;
 }
 .link {
-  color: #fb4934;
-  border-bottom: 1px solid #fb4934;
+  color: $main-red;
+  border-bottom: 1px solid $main-red;
   padding-bottom: 1px;
   &:hover {
     color: #000;
@@ -77,10 +82,10 @@ a {
   p {
     line-height: 1.7;
     code {
-      background: #fff2f0;
+      background: $bgcode-red;
       padding: 1px 4px;
       border-radius: 3px;
-      color: #fb4934;
+      color: $main-red;
     }
   }
   .post-body {
@@ -106,16 +111,16 @@ a {
       font-size: 18px;
     }
     a {
-      color: #fb4934;
-      border-bottom: 1px solid #fb4934;
+      color: $main-red;
+      border-bottom: 1px solid $main-red;
       padding-bottom: 1px;
       &:hover {
         color: #000;
         border-bottom: 1px solid #000;
       }
       &:visited {
-        color: #fb4934;
-        border-bottom: 1px solid #fb4934;
+        color: $main-red;
+        border-bottom: 1px solid $main-red;
       }
     }
   }
@@ -131,7 +136,7 @@ a {
 
 .ps {
   font-style: italic;
-  color: #777;
+  color: $gray;
 }
 
 ::marker {
@@ -147,12 +152,12 @@ a {
     font-family: 'IBM Plex Mono', monospace;
   }
   a {
-    color: #fb4934;
+    color: $main-red;
     &:hover {
       color: #000;
     }
     &:visited {
-      color: #fb4934;
+      color: $main-red;
     }
   }
 }

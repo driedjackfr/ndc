@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resources :tils, only: %i(index show)
 
   namespace :admin do
-    resources :posts, only: %i(new create edit update destroy)
+    resources :posts, only: %i(new create edit update destroy) do
+      collection do
+        get :preview
+      end
+    end
     resources :tlg_messages, only: %i(new create)
   end
 
