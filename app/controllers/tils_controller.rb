@@ -2,7 +2,7 @@
 
 class TilsController < ApplicationController
   def index
-    @posts = Post.til.select(:id, :title, :created_at, :slug).order(created_at: :desc)
+    @posts = Post.publish.til.select(:id, :title, :created_at, :slug).order(created_at: :desc)
   end
 
   def show
@@ -12,10 +12,10 @@ class TilsController < ApplicationController
   def today
     if params[:prev].present?
       @prev = params[:prev].to_i + 1
-      @post = Post.til.order(created_at: :desc).offset(params[:prev].to_i).first
+      @post = Post.publish.til.order(created_at: :desc).offset(params[:prev].to_i).first
       @is_eldest = Post.til.count == @prev
     else
-      @post = Post.til.last
+      @post = Post.publish.til.last
       @prev = 1
     end
   end

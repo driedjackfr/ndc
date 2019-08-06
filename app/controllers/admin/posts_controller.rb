@@ -5,27 +5,21 @@ class Admin::PostsController < Admin::ApplicationController
 
   def new
     @post = Post.new
+    @wip_posts = Post.wip.new_to_old
   end
 
   def create
     @post = current_admin.posts.build(post_params)
-    if @post.save
-      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: 'Created a new post!'
-    else
-      flash.now[:alert] = 'Create post fail!'
-      render :new
-    end
+    assign_post_status
+    direct_save :new, 'Created'
   end
 
   def edit;  end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: 'Updated the post!'
-    else
-      flash.new[:alert] = 'Update post fail!'
-      render :edit
-    end
+    @post.assign_attributes post_params
+    assign_post_status
+    direct_save :edit, 'Updated'
   end
 
   def destroy
@@ -45,5 +39,18 @@ class Admin::PostsController < Admin::ApplicationController
 
   def set_post
     @post = Post.friendly.find(params[:id])
+  end
+
+  def direct_save(page, action)
+    if @post.save
+      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: "#{action} a new post!"
+    else
+      flash.now[:alert] = "#{action} post fail!"
+      render page
+    end
+  end
+
+  def assign_post_status
+    @post.status = params[:commit] == 'Save' ? :wip : :publish
   end
 end

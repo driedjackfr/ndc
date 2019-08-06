@@ -2,8 +2,8 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.common.select(:id, :title, :excerpt, :views_count, :created_at, :slug)
-                 .order(created_at: :desc).page(params[:page])
+    @posts = Post.publish.common.select(:id, :title, :excerpt, :views_count, :created_at, :slug)
+                 .new_to_old.page(params[:page])
   end
 
   def show

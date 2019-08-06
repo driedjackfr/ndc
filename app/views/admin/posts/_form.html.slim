@@ -2,6 +2,8 @@
 
 = simple_form_for [:admin, @post] do |f|
   .f-control
+    p = "Status: #{@post.status}"
+  .f-control
     = f.input :category, as: :select, collection: Post::CATEGORY.keys,
               selected: @post.category, input_html: { class: 'f-input' }
   .f-control
@@ -16,3 +18,4 @@
     = f.input_field :body, rows: 30
     #post-preview.post-body
   = f.button :submit
+  = f.button :submit, 'Save'
