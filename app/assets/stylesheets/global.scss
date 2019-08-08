@@ -72,6 +72,11 @@ a {
       background: #d7bbde 75%;
     }
   }
+  .input-info {
+    color: $gray;
+    font-size: 14px;
+    font-style: italic;
+  }
   .f-input, textarea {
     width: 100%;
     font-family: 'IBM Plex Serif', serif;

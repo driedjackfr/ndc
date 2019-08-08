@@ -1,4 +1,5 @@
 = full_pack 'contents'
+= javascript_pack 'comment'
 = subtitle @post.title
 
 h1 = @post.title
@@ -9,3 +10,13 @@ h1 = @post.title
 contents
 .post-body data-turbolinks="false"
   = markdown(@post.body)
+section#comment
+  h1 Bình luận
+  #comment-action
+    = simple_form_for [@post, Comment.new], remote: true do |f|
+      .f-control
+        = f.input :commenter, input_html: { class: 'f-input' }
+      .f-control
+        = f.input :body, input_html: { class: 'f-input' }
+        span.input-info Ít nhất 5 ký tự
+      = f.button :submit

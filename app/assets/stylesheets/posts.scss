@@ -19,6 +19,15 @@
   color: #777;
 }
 
+.comment-info {
+  display: flex;
+  align-items: center;
+  color: $gray;
+  &:hover {
+    color: $main-red;
+  }
+}
+
 .info {
   color: #777;
   display: flex;
@@ -50,6 +59,8 @@ blockquote {
 }
 
 .post-body {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #efdeef;
   table {
     width: 100%;
     border-collapse: collapse;
@@ -78,6 +89,10 @@ blockquote {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(251, 73, 52, 0.75), rgba(0, 0, 0, 0));
     margin: 50px 0;
   }
+}
+
+#comment {
+  margin: 40px 0;
 }
 
 .til {

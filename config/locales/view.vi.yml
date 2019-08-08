@@ -1,0 +1,5 @@
+vi:
+  helpers:
+    submit:
+      comment:
+        create: "Thêm %{model}"

@@ -1,0 +1,15 @@
+vi:
+  activerecord:
+    models:
+      comment: bình luận
+    attributes:
+      comment:
+        commenter: Tên
+        body: Nội dung
+    errors:
+      models:
+        comment:
+          attributes:
+            body:
+              blank: không được để trống
+              too_short: hơi ngắn (ít nhất là %{count} ký tự)

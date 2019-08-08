@@ -6,3 +6,7 @@ header
     - if logged_in?
       = link_to 'New posts', new_admin_post_path, class: 'link nav-link'
       = link_to 'Sign out', destroy_admin_session_path, class: 'link nav-link', method: :delete
+    - if guest_logged_in?
+      = link_to 'Thoát', destroy_guest_session_path, class: 'link nav-link', method: :delete
+    - else
+      = link_to 'Đăng nhập', new_guest_session_path, class: 'link nav-link'

@@ -9,6 +9,8 @@ class Post < ApplicationRecord
 
   belongs_to :author, class_name: 'Admin', foreign_key: 'user_id'
 
+  has_many :comments
+
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
   validates :views_count, presence: true,
