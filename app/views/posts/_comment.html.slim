@@ -1,0 +1,8 @@
+.comment-wrap
+  .comment-header
+    p.commenter
+      strong = comment.commenter
+    p.comment-created-at
+      em = l comment.created_at, format: :long
+  .comment-body
+    p = comment.body

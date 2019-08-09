@@ -1,5 +1,6 @@
 = full_pack 'contents'
 = javascript_pack 'comment'
+
 = subtitle @post.title
 
 h1 = @post.title
@@ -12,11 +13,15 @@ contents
   = markdown(@post.body)
 section#comment
   h1 Bình luận
+  #comments
+    = render partial: 'comment', collection: @post.comments.order(:created_at)
   #comment-action
     = simple_form_for [@post, Comment.new], remote: true do |f|
+      - unless logged_in? || guest_logged_in?
+        .f-control
+          = f.input :commenter, input_html: { class: 'f-input' }
       .f-control
-        = f.input :commenter, input_html: { class: 'f-input' }
-      .f-control
-        = f.input :body, input_html: { class: 'f-input' }
+        = f.input :body, input_html: { class: 'f-input', rows: 7 }
         span.input-info Ít nhất 5 ký tự
+        p#body-error
       = f.button :submit

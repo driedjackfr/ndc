@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
   private
 
   def set_name
-    return commenter = user.username if user
-    commenter ||= 'Làm biếng viết tên'
+    return self.commenter = user.username if user
+    self.commenter = 'Làm biếng viết tên' if commenter.blank?
   end
 end

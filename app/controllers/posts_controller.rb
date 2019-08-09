@@ -10,5 +10,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.friendly.common.find(params[:id])
     @post.increment!(:views_count) unless current_admin
+    # @comments = @post.comments
   end
 end

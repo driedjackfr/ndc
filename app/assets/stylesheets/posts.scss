@@ -28,6 +28,34 @@
   }
 }
 
+#comment-action {
+  margin-top: 40px;
+  max-width: 96%;
+  #body-error {
+    color: $error-red;
+  }
+}
+#comments {
+  .comment-wrap {
+    margin: 30px 0;
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .comment-body {
+      white-space: pre-line;
+    }
+  }
+}
+.commenter {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.comment-created-at {
+  font-size: 14px;
+  color: $gray;
+}
+
 .info {
   color: #777;
   display: flex;
