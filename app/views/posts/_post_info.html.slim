@@ -3,4 +3,7 @@
   p.info-text = post.display_created_at
   = evil_icon 'ei-eye'
   p.info-text = "#{number_with_delimiter post.views_count, delimiter: '.'} lượt xem"
+  = link_to post_path(post, anchor: 'comment'), class: 'comment-info', data: { turbolinks: false } do
+    = evil_icon 'ei-comment'
+    span.info-text = "#{post.comments_count} bình luận"
   = render partial: 'shared/action', locals: { post: post } if logged_in?

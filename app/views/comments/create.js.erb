@@ -1,0 +1,4 @@
+document.getElementById("comments").insertAdjacentHTML(
+  'beforeend',
+  "<%= escape_javascript(render partial: 'posts/comment', object: @comment) %>"
+)

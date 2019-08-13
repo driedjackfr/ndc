@@ -1,6 +1,10 @@
 module ApplicationHelper
   def logged_in?
-    current_admin != nil
+    !!current_admin
+  end
+
+  def guest_logged_in?
+    !!current_guest
   end
 
   def javascript_pack(pack)
