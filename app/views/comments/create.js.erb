@@ -1,2 +1,4 @@
-const comment = "<%= escape_javascript(render partial: 'posts/comment', object: @comment) %>"
-document.getElementById("comments").insertAdjacentHTML('beforeend', comment)
+document.getElementById("comments").insertAdjacentHTML(
+  'beforeend',
+  "<%= escape_javascript(render partial: 'posts/comment', object: @comment) %>"
+)

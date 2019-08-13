@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :validatable
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 2 }
+  validates :username, presence: true, uniqueness: true, length: { in: 2..20 }
 end

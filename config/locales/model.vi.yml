@@ -13,3 +13,17 @@ vi:
             body:
               blank: không được để trống
               too_short: hơi ngắn (ít nhất là %{count} ký tự)
+        guest:
+          attributes:
+            username:
+              blank: không được để trống
+              too_short: hơi ngắn (ít nhất là %{count} ký tự)
+              too_long: hơi dài (nhiều nhất là %{count} ký tự)
+            email:
+              blank: không được để trống
+            password:
+              blank: không được để trống
+              too_short: hơi ngắn (ít nhất là %{count} ký tự)
+            password_confirmation:
+              confirmation: không khớp
+

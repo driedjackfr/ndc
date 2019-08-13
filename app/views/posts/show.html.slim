@@ -20,6 +20,9 @@ section#comment
       - unless logged_in? || guest_logged_in?
         .f-control
           = f.input :commenter, input_html: { class: 'f-input' }
+          .input-info
+            span Không nhập cũng được nhưng mà nên nhập để người ta biết mình là ai, hoặc
+            = link_to ' đăng nhập.', guest_session_path
       .f-control
         = f.input :body, input_html: { class: 'f-input', rows: 7 }
         span.input-info Ít nhất 5 ký tự
