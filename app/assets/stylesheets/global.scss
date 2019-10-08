@@ -14,11 +14,11 @@ body {
   margin-bottom: 50px;
 }
 p, label, input, ul, ol, a, table {
-  font-family: 'IBM Plex Serif', serif;
+  font-family: 'Dosis', sans-serif;
 }
 h1, h2, h3, h4 {
   line-height: 1.4;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 h1 {
   font-size: 40px;
@@ -34,12 +34,12 @@ p, label, input, textarea {
 }
 code {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 16px;
+  font-size: 14px;
 }
 h1, h2 {
   a {
     color: #000;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Dosis', sans-serif;
     border: none !important;
   }
 }
@@ -79,7 +79,7 @@ a {
   }
   .f-input, textarea {
     width: 100%;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Dosis', sans-serif;
   }
   input {
     padding: 3px 10px;
