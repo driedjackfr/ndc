@@ -32,4 +32,11 @@ document.addEventListener('turbolinks:load', () => {
     document.getElementById('post_body').style.display = "block"
     preview.style.display = "none"
   })
+
+  function toggle_book_review() {
+    let cate = document.getElementById("post_category");
+    if (cate.value !== "review") {
+
+    }
+  }
 })

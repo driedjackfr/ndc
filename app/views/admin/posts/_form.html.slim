@@ -6,6 +6,17 @@
   .f-control
     = f.input :category, as: :select, collection: Post::CATEGORY.keys,
               selected: @post.category, input_html: { class: 'f-input' }
+
+  fieldset#book-form
+    legend Book Review
+    = f.simple_fields_for :books do |book_f|
+      .f-control
+        = book_f.input :title, input_html: { class: 'bf-input' }
+      .f-control
+        = book_f.input :image_url, input_html: { class: 'bf-input' }
+      .f-control
+        = book_f.input :point, as: :integer, input_html: { class: 'bf-input' }
+
   .f-control
     = f.input :title, input_html: { class: 'f-input' }
   .f-control

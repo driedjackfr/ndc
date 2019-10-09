@@ -4,12 +4,14 @@ class Post < ApplicationRecord
   include Timeable
   extend FriendlyId
 
-  CATEGORY = { common: 0, til: 1 }.freeze
+  CATEGORY = { common: 0, til: 1, review: 2 }.freeze
   STATUS = { wip: 0, publish: 1 }.freeze
 
   belongs_to :author, class_name: 'Admin', foreign_key: 'user_id'
 
   has_many :comments, dependent: :destroy
+  has_one :book
+  accepts_nested_attributes_for :book
 
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
