@@ -10,8 +10,8 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'Admin', foreign_key: 'user_id'
 
   has_many :comments, dependent: :destroy
-  has_one :book
-  accepts_nested_attributes_for :book
+  has_one :book, dependent: :destroy
+  accepts_nested_attributes_for :book, reject_if: :all_blank
 
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true

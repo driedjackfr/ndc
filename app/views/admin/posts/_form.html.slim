@@ -1,4 +1,4 @@
-= javascript_pack 'post_preview'
+/ = javascript_pack 'post_preview'
 
 = simple_form_for [:admin, @post] do |f|
   .f-control
@@ -9,11 +9,17 @@
 
   fieldset#book-form
     legend Book Review
-    = f.simple_fields_for :books do |book_f|
+    = f.simple_fields_for :book do |book_f|
       .f-control
         = book_f.input :title, input_html: { class: 'bf-input' }
       .f-control
-        = book_f.input :image_url, input_html: { class: 'bf-input' }
+        = book_f.input :cover, input_html: { class: 'bf-input' }
+      .f-control
+        = book_f.input :feature_image, input_html: { class: 'bf-input' }
+      .f-control
+        = book_f.input :author, input_html: { class: 'bf-input' }
+      .f-control
+        = book_f.input :page, as: :integer, input_html: { class: 'bf-input' }
       .f-control
         = book_f.input :point, as: :integer, input_html: { class: 'bf-input' }
 

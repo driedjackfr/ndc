@@ -15,6 +15,7 @@ html lang='vi'
   body
     = render 'shared/header'
     = render 'shared/flash_message'
+    = render 'shared/feature_image' if controller_name == 'books' && action_name == 'show'
     #container
       = yield
     = render 'shared/footer'

@@ -17,7 +17,10 @@ ActiveRecord::Schema.define(version: 2019_10_09_144423) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "image_url"
+    t.string "cover"
+    t.string "feature_image"
+    t.string "author"
+    t.integer "page"
     t.integer "point"
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false

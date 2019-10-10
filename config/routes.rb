@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :tils, only: %i(index show)
-  resources :books, only: %i(index)
+  resources :books, only: %i(index show)
 
   namespace :admin do
     resources :posts, only: %i(new create edit update destroy) do

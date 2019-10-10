@@ -18,3 +18,4 @@ require("channels")
 import './contents'
 import './caro'
 import './comment'
+import './post_preview'

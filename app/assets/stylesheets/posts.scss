@@ -158,3 +158,21 @@ blockquote {
     }
   }
 }
+
+.book-detail {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  .cover {
+    margin-right: 20px;
+    img {
+      max-width: 130px;
+    }
+  }
+  .book-info {
+    .points {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
