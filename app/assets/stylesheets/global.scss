@@ -203,72 +203,63 @@ a {
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-}
-
-.card-cover {
-  width: 100%;
-  height: 100%;
-}
-
-.card .additional {
-  position: absolute;
-  width: 150px;
-  height: 100%;
-  background-image: linear-gradient(141deg, #ffdcbe 0%, #ffdcbe 51%, #eee 75%);
-  transition: width 0.4s;
-  overflow: hidden;
-  z-index: 2;
-  color: #000;
-}
-
-.card .book-title {
-  margin-bottom: 15px;
-}
-
-.card:hover .additional {
-  width: 100%;
-  border-radius: 0 5px 5px 0;
-}
-
-.card .additional .more-info {
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.card .additional .cover-card {
-  width: 150px;
-  height: 100%;
-  position: relative;
-  float: left;
-}
-
-.card .additional .cover-card::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10%;
-  right: -2px;
-  height: 80%;
-  border-left: 2px solid rgba(0,0,0,0.025);
-}
-
-.card .general {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 150px;
-  right: 0;
-  z-index: 1;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.card .general .more {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  font-size: 13px;
-  color: $gray;
-  font-family: 'Dosis', sans-serif;
+  .additional {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background-image: linear-gradient(141deg, #ffdcbe 0%, #ffdcbe 51%, #eee 75%);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+    color: #000;
+    .cover-card {
+      width: 150px;
+      height: 100%;
+      position: relative;
+      float: left;
+      .card-cover {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cover-card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10%;
+      right: -2px;
+      height: 80%;
+      border-left: 2px solid rgba(0,0,0,0.025);
+    }
+    .more-info {
+      padding: 10px 20px;
+      text-align: center;
+    }
+  }
+  .general {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    text-align: center;
+    .more {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-size: 13px;
+      color: $gray;
+      font-family: 'Dosis', sans-serif;
+    }
+  }
+  .book-title {
+    margin-bottom: 15px;
+  }
+  &:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
 }
