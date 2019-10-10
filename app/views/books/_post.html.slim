@@ -1,0 +1,16 @@
+.review
+  = render partial: 'shared/action', locals: { post: post } if logged_in?
+  h1.center = post.title
+  .post-body
+    = markdown(post.body)
+.book-detail
+  .cover
+    = image_tag @book.cover
+  .book-info
+    p
+      strong = @book.title
+    p = "Tác giả: #{@book.author}"
+    p = "Số trang: #{@book.page}"
+    .points
+      p Đánh giá:
+      = render partial: 'shared/stars', locals: { book: @book }

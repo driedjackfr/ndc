@@ -1,0 +1,13 @@
+.card
+  = link_to book_path(book.post), class: 'additional' do
+    .cover-card
+      = image_tag book.cover, class: 'card-cover'
+    .more-info
+      h2.book-title = book.title
+      p = book.author
+      p = "#{book.page} trang"
+      = render partial: 'shared/stars', locals: { book: book }
+  .general
+    h2.book-title = book.post.title
+    p = book.post.excerpt
+    span.more Rê chuột để xem thông tin sách

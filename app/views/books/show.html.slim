@@ -1,0 +1,5 @@
+= subtitle @book.title
+= content_for :feature_image do
+  - @book.feature_image
+
+= render 'post', { post: @post }

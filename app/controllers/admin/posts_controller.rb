@@ -5,6 +5,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def new
     @post = Post.new
+    @post.build_book
     @wip_posts = Post.wip.new_to_old
   end
 
@@ -34,7 +35,7 @@ class Admin::PostsController < Admin::ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :excerpt, :body, :category)
+    params.require(:post).permit(:title, :excerpt, :body, :category, book_attributes: {})
   end
 
   def set_post
@@ -43,7 +44,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def direct_save(page, action)
     if @post.save
-      redirect_to @post.common? ? post_path(@post) : til_path(@post), notice: "#{action} a new post!"
+      redirect_to show_post_path, notice: "#{action} a new post!"
     else
       flash.now[:alert] = "#{action} post fail!"
       render page
@@ -52,5 +53,16 @@ class Admin::PostsController < Admin::ApplicationController
 
   def assign_post_status
     @post.status = params[:commit] == 'Save' ? :wip : :publish
+  end
+
+  def show_post_path
+    case @post.category
+    when 'common'
+      post_path(@post)
+    when 'til'
+      til_path(@post)
+    when 'review'
+      book_path(@post)
+    end
   end
 end

@@ -13,7 +13,7 @@ html {
 body {
   margin-bottom: 50px;
 }
-p, label, input, ul, ol, a, table {
+p, label, input, ul, ol, a, table, strong, em, legend {
   font-family: 'Dosis', sans-serif;
 }
 h1, h2, h3, h4 {
@@ -81,6 +81,18 @@ a {
     width: 100%;
     font-family: 'Dosis', sans-serif;
   }
+
+  .bf-input {
+    width: 96%;
+  }
+
+  fieldset {
+    padding: 5px 15px;
+    legend {
+      font-weight: bold;
+    }
+  }
+
   input {
     padding: 3px 10px;
   }
@@ -99,6 +111,7 @@ a {
   .post-body {
     text-align: justify;
     text-justify: inter-word;
+    margin-top: 20px;
     img {
       display: block;
       margin: auto;
@@ -155,7 +168,8 @@ a {
 
 .pagination {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  margin-top: 30px;
   * {
     font-family: 'IBM Plex Mono', monospace;
   }
@@ -167,5 +181,85 @@ a {
     &:visited {
       color: $main-red;
     }
+  }
+}
+
+#feature-img {
+  width: 100%;
+}
+
+.active-icon {
+  color: $main-red;
+}
+.disable-icon {
+  color: $gray;
+}
+
+.card {
+  margin-top: 30px;
+  height: 230px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  .additional {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background-image: linear-gradient(141deg, #ffdcbe 0%, #ffdcbe 51%, #eee 75%);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+    color: #000;
+    .cover-card {
+      width: 150px;
+      height: 100%;
+      position: relative;
+      float: left;
+      .card-cover {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cover-card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10%;
+      right: -2px;
+      height: 80%;
+      border-left: 2px solid rgba(0,0,0,0.025);
+    }
+    .more-info {
+      padding: 10px 20px;
+      text-align: center;
+    }
+  }
+  .general {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    text-align: center;
+    .more {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-size: 13px;
+      color: $gray;
+      font-family: 'Dosis', sans-serif;
+    }
+  }
+  .book-title {
+    margin-bottom: 15px;
+  }
+  &:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
   }
 }
