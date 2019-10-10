@@ -13,6 +13,4 @@
     p = "Số trang: #{@book.page}"
     .points
       p Đánh giá:
-      .stars
-        = evil_icon('ei-star', class: 'active-icon') * @book.point
-        = evil_icon('ei-star', class: 'disable-icon') * (5 - @book.point)
+      = render partial: 'shared/stars', locals: { book: @book }

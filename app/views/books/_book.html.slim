@@ -1,14 +1,12 @@
 .card
   = link_to book_path(book.post), class: 'additional' do
-    .user-card
+    .cover-card
       = image_tag book.cover, class: 'card-cover'
     .more-info
       h2.book-title = book.title
       p = book.author
       p = "#{book.page} trang"
-      .stars
-        = evil_icon('ei-star', class: 'active-icon') * book.point
-        = evil_icon('ei-star', class: 'disable-icon') * (5 - book.point)
+      = render partial: 'shared/stars', locals: { book: book }
   .general
     h2.book-title = book.post.title
     p = book.post.excerpt

@@ -46,7 +46,6 @@ class Admin::PostsController < Admin::ApplicationController
     if @post.save
       redirect_to show_post_path, notice: "#{action} a new post!"
     else
-      p @post.errors.messages
       flash.now[:alert] = "#{action} post fail!"
       render page
     end

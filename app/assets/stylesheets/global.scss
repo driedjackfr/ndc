@@ -13,7 +13,7 @@ html {
 body {
   margin-bottom: 50px;
 }
-p, label, input, ul, ol, a, table, strong, em, span, legend {
+p, label, input, ul, ol, a, table, strong, em, legend {
   font-family: 'Dosis', sans-serif;
 }
 h1, h2, h3, h4 {
@@ -111,6 +111,7 @@ a {
   .post-body {
     text-align: justify;
     text-justify: inter-word;
+    margin-top: 20px;
     img {
       display: block;
       margin: auto;
@@ -194,8 +195,6 @@ a {
   color: $gray;
 }
 
-
-
 .card {
   margin-top: 30px;
   height: 230px;
@@ -209,10 +208,6 @@ a {
 .card-cover {
   width: 100%;
   height: 100%;
-}
-
-.card h1 {
-  text-align: center;
 }
 
 .card .additional {
@@ -230,38 +225,24 @@ a {
   margin-bottom: 15px;
 }
 
-.card.green .additional {
-  background: linear-gradient(#92bCa6, #A2CCB6);
-}
-
-
 .card:hover .additional {
   width: 100%;
   border-radius: 0 5px 5px 0;
 }
 
-// .card:hover .additional .more-info {
-//   text-align: center;
-// }
-
 .card .additional .more-info {
-  // width: 300px;
-  // float: left;
-  // position: absolute;
-  // left: 150px;
-  // height: 100%;
   padding: 10px 20px;
   text-align: center;
 }
 
-.card .additional .user-card {
+.card .additional .cover-card {
   width: 150px;
   height: 100%;
   position: relative;
   float: left;
 }
 
-.card .additional .user-card::after {
+.card .additional .cover-card::after {
   content: "";
   display: block;
   position: absolute;
@@ -269,90 +250,6 @@ a {
   right: -2px;
   height: 80%;
   border-left: 2px solid rgba(0,0,0,0.025);
-}
-
-.card .additional .user-card .level,
-.card .additional .user-card .points {
-  top: 15%;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: bold;
-  background: rgba(0,0,0,0.15);
-  padding: 0.125rem 0.75rem;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-
-.card .additional .user-card .points {
-  top: 85%;
-}
-
-.card .additional .user-card svg {
-  top: 50%;
-}
-
-.card .additional .more-info h1 {
-  color: #fff;
-  margin-bottom: 0;
-}
-
-.card.green .additional .more-info h1 {
-  color: #224C36;
-}
-
-.card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.card.green .additional .coords {
-  color: #325C46;
-}
-
-.card .additional .coords span + span {
-  float: right;
-}
-
-.card .additional .stats {
-  font-size: 2rem;
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  top: auto;
-  color: #fff;
-}
-
-.card.green .additional .stats {
-  color: #325C46;
-}
-
-.card .additional .stats > div {
-  flex: 1;
-  text-align: center;
-}
-
-.card .additional .stats i {
-  display: block;
-}
-
-.card .additional .stats div.title {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.card .additional .stats div.value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.5rem;
-}
-
-.card .additional .stats div.value.infinity {
-  font-size: 2.5rem;
 }
 
 .card .general {
@@ -373,4 +270,5 @@ a {
   right: 20px;
   font-size: 13px;
   color: $gray;
+  font-family: 'Dosis', sans-serif;
 }
