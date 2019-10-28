@@ -8,10 +8,12 @@ $bgcode-red: #fff2f0;
   padding: 0;
 }
 html {
-  background: #f7f7f5;
+  overflow-x: hidden;
 }
 body {
-  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 p, label, input, ul, ol, a, table, strong, em, legend {
   font-family: 'Dosis', sans-serif;
@@ -58,7 +60,11 @@ a {
 #container {
   max-width: 700px;
   margin: 20px auto;
-  padding: 0 10px;
+  padding: 72.75px 150px;
+  line-height: 1.7em;
+  position: relative;
+  z-index: 11;
+  background: #fff;
   .f-control {
     margin-bottom: 15px;
   }
@@ -262,4 +268,9 @@ a {
     width: 100%;
     border-radius: 0 5px 5px 0;
   }
+}
+
+.post-holder {
+  max-width: 900px;
+  margin: 0 auto;
 }

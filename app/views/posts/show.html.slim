@@ -3,27 +3,28 @@
 
 = subtitle @post.title
 
-h1 = @post.title
-.description
-  p#excerpt
-    em = @post.excerpt
-  = render partial: 'post_info', locals: { post: @post }
-contents
-.post-body data-turbolinks="false"
-  = markdown(@post.body)
-section#comment
-  h1 Bình luận
-  #comments
-    = render partial: 'comment', collection: @post.comments.order(:created_at)
-  #comment-action
-    = simple_form_for [@post, Comment.new], remote: true do |f|
-      - unless logged_in? || guest_logged_in?
+.post-holder
+  h1 = @post.title
+  .description
+    p#excerpt
+      em = @post.excerpt
+    = render partial: 'post_info', locals: { post: @post }
+  contents
+  .post-body data-turbolinks="false"
+    = markdown(@post.body)
+  section#comment
+    h1 Bình luận
+    #comments
+      = render partial: 'comment', collection: @post.comments.order(:created_at)
+    #comment-action
+      = simple_form_for [@post, Comment.new], remote: true do |f|
+        - unless logged_in? || guest_logged_in?
+          .f-control
+            = f.input :commenter, input_html: { class: 'f-input' }
+            .input-info
+              span Có thể nhập hoặc không
         .f-control
-          = f.input :commenter, input_html: { class: 'f-input' }
-          .input-info
-            span Có thể nhập hoặc không
-      .f-control
-        = f.input :body, input_html: { class: 'f-input', rows: 7 }
-        span.input-info Ít nhất 5 ký tự
-        p#body-error
-      = f.button :submit
+          = f.input :body, input_html: { class: 'f-input', rows: 7 }
+          span.input-info Ít nhất 5 ký tự
+          p#body-error
+        = f.button :submit

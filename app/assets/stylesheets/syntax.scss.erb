@@ -1,13 +1,29 @@
-<%= Rouge::Themes::Gruvbox.render(scope: '.highlight') %>
+<%= Rouge::Themes::Gruvbox.mode(:light).render(scope: '.highlight') %>
 
 div.highlight {
-  padding: 10px 15px;
-  border: 1px solid black;
-  border-radius: 5px;
-  overflow: auto;
-  margin: 20px 0;
-  -webkit-box-shadow: 3px 3px 5px 0px rgba(57, 57, 57, 0.5);
-  -moz-box-shadow: 3px 3px 5px 0px rgba(57, 57, 57, 0.5);
-  box-shadow: 3px 3px 5px 0px rgba(57, 57, 57, 0.5);
-  line-height: 1.5;
+}
+
+pre.highlight {
+  position: relative;
+  background-color: #f8f8f8 !important;
+  margin: 39px -20px 50px;
+  padding: 36px 60px 38px;
+  font-size: 14px;
+  line-height: 20px;
+}
+pre.highlight:before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    right: -50vw;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #f8f8f8;
+}
+
+#container:after {
+    content: "";
+    display: table;
+    clear: both;
 }
